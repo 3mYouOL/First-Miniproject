@@ -41,3 +41,8 @@ corr <- function(directory, threshold = 0) {
 
     csv_correlations
 }
+
+outcome <- read.csv("ProgHospData/outcome-of-care-measures.csv", colClasses = "character")
+outcome[, 11] <- as.numeric(outcome[, 11])
+
+hist(outcome[, 11], xlab="Deaths", main="Hospital 30-Day Death (Mortality) Rates from Heart Attack")
